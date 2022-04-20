@@ -5,11 +5,11 @@ import time
 class ISKClient():
     def __init__(self, address = 'localhost', source_address = 81):
         self.address = address
-        self.source_adress = source_address
+        self.source_address = source_address
 
     def main_loop(self, iterations=10, num_of_elements = 64, wait = 0):
         # Create a connection to the server application on port 81
-        tcp_socket = socket.create_connection((self.address, self.source_adress))
+        tcp_socket = socket.create_connection((self.address, self.source_address))
 
         '''
         rozmiar zakodowanego str to 33+num_of_elements Bytów

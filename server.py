@@ -7,14 +7,14 @@ class ISKServer():
     def __init__(self, size=1024, address = 'localhost', source_address = 81):
         self.size = size
         self.address = address
-        self.source_adress = source_address
+        self.source_address = source_address
 
     def main_loop(self):
         # Set up a TCP/IP server
         tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         # Bind the socket to server address and port 81
-        server_address = (self.address, self.source_adress)
+        server_address = (self.address, self.source_address)
         tcp_socket.bind(server_address)
 
         # Listen on port 81
