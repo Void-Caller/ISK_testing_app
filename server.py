@@ -4,7 +4,7 @@ import sys
 
 
 class ISKServer():
-    def __init__(self, size=64, address = 'localhost', source_address = 81):
+    def __init__(self, size=1024, address = 'localhost', source_address = 81):
         self.size = size
         self.address = address
         self.source_adress = source_address
@@ -39,5 +39,9 @@ class ISKServer():
                 connection.close()
 
 if __name__ == '__main__':
-    server = ISKServer()
+    address = input("Enter address: ")
+    port = int(input("Enter port: "))
+    size = int(input("Enter expected size of messages: "))
+
+    server = ISKServer(size, address, port)
     server.main_loop()

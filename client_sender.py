@@ -32,5 +32,17 @@ class ISKClient():
             tcp_socket.close()
 
 if __name__ == '__main__':
-    client = ISKClient()
-    client.main_loop(wait=10)
+    address = input("Enter address: ")
+    port = int(input("Enter port: "))
+
+    if address and port:
+        client = ISKClient(address, port)
+    else:
+        client = ISKClient()
+
+    iter = int(input("Enter number of messages: "))
+    num = int(input("Enter message size in bytes, min 40: "))
+    wait = int(input("Enter wait time between messages in miliseconds: "))
+
+
+    client.main_loop(iterations=iter, num_of_elements=num, wait=wait)
